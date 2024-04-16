@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>define package &mdash; Ouroboros Define 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ouroboros Define
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">define package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-define.array">define.array module</a><ul>
+<li><a class="reference internal" href="#define.array.Array"><code class="docutils literal notranslate"><span class="pre">Array</span></code></a><ul>
+<li><a class="reference internal" href="#define.array.Array.child"><code class="docutils literal notranslate"><span class="pre">Array.child()</span></code></a></li>
+<li><a class="reference internal" href="#define.array.Array.clean"><code class="docutils literal notranslate"><span class="pre">Array.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.array.Array.minmax"><code class="docutils literal notranslate"><span class="pre">Array.minmax()</span></code></a></li>
+<li><a class="reference internal" href="#define.array.Array.to_dict"><code class="docutils literal notranslate"><span class="pre">Array.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.array.Array.type"><code class="docutils literal notranslate"><span class="pre">Array.type()</span></code></a></li>
+<li><a class="reference internal" href="#define.array.Array.valid"><code class="docutils literal notranslate"><span class="pre">Array.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define.base">define.base module</a><ul>
+<li><a class="reference internal" href="#define.base.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul>
+<li><a class="reference internal" href="#define.base.Base.class_name"><code class="docutils literal notranslate"><span class="pre">Base.class_name()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.clean"><code class="docutils literal notranslate"><span class="pre">Base.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.create"><code class="docutils literal notranslate"><span class="pre">Base.create()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.from_file"><code class="docutils literal notranslate"><span class="pre">Base.from_file()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.make_details"><code class="docutils literal notranslate"><span class="pre">Base.make_details()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.optional"><code class="docutils literal notranslate"><span class="pre">Base.optional()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.register"><code class="docutils literal notranslate"><span class="pre">Base.register()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.special"><code class="docutils literal notranslate"><span class="pre">Base.special()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.special_set"><code class="docutils literal notranslate"><span class="pre">Base.special_set()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.to_dict"><code class="docutils literal notranslate"><span class="pre">Base.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.to_json"><code class="docutils literal notranslate"><span class="pre">Base.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.valid"><code class="docutils literal notranslate"><span class="pre">Base.valid()</span></code></a></li>
+<li><a class="reference internal" href="#define.base.Base.validation_failures"><code class="docutils literal notranslate"><span class="pre">Base.validation_failures</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define.constants">define.constants module</a></li>
+<li><a class="reference internal" href="#module-define.hash">define.hash module</a><ul>
+<li><a class="reference internal" href="#define.hash.Hash"><code class="docutils literal notranslate"><span class="pre">Hash</span></code></a><ul>
+<li><a class="reference internal" href="#define.hash.Hash.child"><code class="docutils literal notranslate"><span class="pre">Hash.child()</span></code></a></li>
+<li><a class="reference internal" href="#define.hash.Hash.clean"><code class="docutils literal notranslate"><span class="pre">Hash.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.hash.Hash.key"><code class="docutils literal notranslate"><span class="pre">Hash.key()</span></code></a></li>
+<li><a class="reference internal" href="#define.hash.Hash.to_dict"><code class="docutils literal notranslate"><span class="pre">Hash.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.hash.Hash.valid"><code class="docutils literal notranslate"><span class="pre">Hash.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define.node">define.node module</a><ul>
+<li><a class="reference internal" href="#define.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li><a class="reference internal" href="#define.node.Node.clean"><code class="docutils literal notranslate"><span class="pre">Node.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.compare_ips"><code class="docutils literal notranslate"><span class="pre">Node.compare_ips()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.minmax"><code class="docutils literal notranslate"><span class="pre">Node.minmax()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.options"><code class="docutils literal notranslate"><span class="pre">Node.options()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.regex"><code class="docutils literal notranslate"><span class="pre">Node.regex()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.to_dict"><code class="docutils literal notranslate"><span class="pre">Node.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.type"><code class="docutils literal notranslate"><span class="pre">Node.type()</span></code></a></li>
+<li><a class="reference internal" href="#define.node.Node.valid"><code class="docutils literal notranslate"><span class="pre">Node.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define.options">define.options module</a><ul>
+<li><a class="reference internal" href="#define.options.Options"><code class="docutils literal notranslate"><span class="pre">Options</span></code></a><ul>
+<li><a class="reference internal" href="#define.options.Options.clean"><code class="docutils literal notranslate"><span class="pre">Options.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.options.Options.option"><code class="docutils literal notranslate"><span class="pre">Options.option()</span></code></a></li>
+<li><a class="reference internal" href="#define.options.Options.to_dict"><code class="docutils literal notranslate"><span class="pre">Options.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.options.Options.valid"><code class="docutils literal notranslate"><span class="pre">Options.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define.parent">define.parent module</a><ul>
+<li><a class="reference internal" href="#define.parent.Parent"><code class="docutils literal notranslate"><span class="pre">Parent</span></code></a><ul>
+<li><a class="reference internal" href="#define.parent.Parent.child"><code class="docutils literal notranslate"><span class="pre">Parent.child()</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.clean"><code class="docutils literal notranslate"><span class="pre">Parent.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.has_key"><code class="docutils literal notranslate"><span class="pre">Parent.has_key()</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.keys"><code class="docutils literal notranslate"><span class="pre">Parent.keys()</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.nodes"><code class="docutils literal notranslate"><span class="pre">Parent.nodes</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.requires"><code class="docutils literal notranslate"><span class="pre">Parent.requires()</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.to_dict"><code class="docutils literal notranslate"><span class="pre">Parent.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.parent.Parent.valid"><code class="docutils literal notranslate"><span class="pre">Parent.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define.tree">define.tree module</a><ul>
+<li><a class="reference internal" href="#define.tree.Tree"><code class="docutils literal notranslate"><span class="pre">Tree</span></code></a><ul>
+<li><a class="reference internal" href="#define.tree.Tree.to_dict"><code class="docutils literal notranslate"><span class="pre">Tree.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.tree.Tree.valid"><code class="docutils literal notranslate"><span class="pre">Tree.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-define">Module contents</a><ul>
+<li><a class="reference internal" href="#define.Array"><code class="docutils literal notranslate"><span class="pre">Array</span></code></a><ul>
+<li><a class="reference internal" href="#define.Array.child"><code class="docutils literal notranslate"><span class="pre">Array.child()</span></code></a></li>
+<li><a class="reference internal" href="#define.Array.clean"><code class="docutils literal notranslate"><span class="pre">Array.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.Array.minmax"><code class="docutils literal notranslate"><span class="pre">Array.minmax()</span></code></a></li>
+<li><a class="reference internal" href="#define.Array.to_dict"><code class="docutils literal notranslate"><span class="pre">Array.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Array.type"><code class="docutils literal notranslate"><span class="pre">Array.type()</span></code></a></li>
+<li><a class="reference internal" href="#define.Array.valid"><code class="docutils literal notranslate"><span class="pre">Array.valid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#define.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul>
+<li><a class="reference internal" href="#define.Base.class_name"><code class="docutils literal notranslate"><span class="pre">Base.class_name()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.clean"><code class="docutils literal notranslate"><span class="pre">Base.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.create"><code class="docutils literal notranslate"><span class="pre">Base.create()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.from_file"><code class="docutils literal notranslate"><span class="pre">Base.from_file()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.make_details"><code class="docutils literal notranslate"><span class="pre">Base.make_details()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.optional"><code class="docutils literal notranslate"><span class="pre">Base.optional()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.register"><code class="docutils literal notranslate"><span class="pre">Base.register()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.special"><code class="docutils literal notranslate"><span class="pre">Base.special()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.special_set"><code class="docutils literal notranslate"><span class="pre">Base.special_set()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.to_dict"><code class="docutils literal notranslate"><span class="pre">Base.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.to_json"><code class="docutils literal notranslate"><span class="pre">Base.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.valid"><code class="docutils literal notranslate"><span class="pre">Base.valid()</span></code></a></li>
+<li><a class="reference internal" href="#define.Base.validation_failures"><code class="docutils literal notranslate"><span class="pre">Base.validation_failures</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#define.Hash"><code class="docutils literal notranslate"><span class="pre">Hash</span></code></a><ul>
+<li><a class="reference internal" href="#define.Hash.child"><code class="docutils literal notranslate"><span class="pre">Hash.child()</span></code></a></li>
+<li><a class="reference internal" href="#define.Hash.clean"><code class="docutils literal notranslate"><span class="pre">Hash.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.Hash.key"><code class="docutils literal notranslate"><span class="pre">Hash.key()</span></code></a></li>
+<li><a class="reference internal" href="#define.Hash.to_dict"><code class="docutils literal notranslate"><span class="pre">Hash.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Hash.valid"><code class="docutils literal notranslate"><span class="pre">Hash.valid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#define.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li><a class="reference internal" href="#define.Node.clean"><code class="docutils literal notranslate"><span class="pre">Node.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.compare_ips"><code class="docutils literal notranslate"><span class="pre">Node.compare_ips()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.minmax"><code class="docutils literal notranslate"><span class="pre">Node.minmax()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.options"><code class="docutils literal notranslate"><span class="pre">Node.options()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.regex"><code class="docutils literal notranslate"><span class="pre">Node.regex()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.to_dict"><code class="docutils literal notranslate"><span class="pre">Node.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.type"><code class="docutils literal notranslate"><span class="pre">Node.type()</span></code></a></li>
+<li><a class="reference internal" href="#define.Node.valid"><code class="docutils literal notranslate"><span class="pre">Node.valid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#define.Options"><code class="docutils literal notranslate"><span class="pre">Options</span></code></a><ul>
+<li><a class="reference internal" href="#define.Options.clean"><code class="docutils literal notranslate"><span class="pre">Options.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.Options.option"><code class="docutils literal notranslate"><span class="pre">Options.option()</span></code></a></li>
+<li><a class="reference internal" href="#define.Options.to_dict"><code class="docutils literal notranslate"><span class="pre">Options.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Options.valid"><code class="docutils literal notranslate"><span class="pre">Options.valid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#define.Parent"><code class="docutils literal notranslate"><span class="pre">Parent</span></code></a><ul>
+<li><a class="reference internal" href="#define.Parent.child"><code class="docutils literal notranslate"><span class="pre">Parent.child()</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.clean"><code class="docutils literal notranslate"><span class="pre">Parent.clean()</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.has_key"><code class="docutils literal notranslate"><span class="pre">Parent.has_key()</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.keys"><code class="docutils literal notranslate"><span class="pre">Parent.keys()</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.nodes"><code class="docutils literal notranslate"><span class="pre">Parent.nodes</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.requires"><code class="docutils literal notranslate"><span class="pre">Parent.requires()</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.to_dict"><code class="docutils literal notranslate"><span class="pre">Parent.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Parent.valid"><code class="docutils literal notranslate"><span class="pre">Parent.valid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#define.Tree"><code class="docutils literal notranslate"><span class="pre">Tree</span></code></a><ul>
+<li><a class="reference internal" href="#define.Tree.to_dict"><code class="docutils literal notranslate"><span class="pre">Tree.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#define.Tree.valid"><code class="docutils literal notranslate"><span class="pre">Tree.valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ouroboros Define</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">define package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/define.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="define-package">
+<h1>define package<a class="headerlink" href="#define-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-define.array">
+<span id="define-array-module"></span><h2>define.array module<a class="headerlink" href="#module-define.array" title="Link to this heading"></a></h2>
+<p>Array</p>
+<p>Represents a node which is a list of multiple nodes</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.array.Array">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.array.</span></span><span class="sig-name descname"><span class="pre">Array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.array.Array" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Handles lists of nodes</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.array.Array.child">
+<span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#define.base.Base" title="define.base.Base"><span class="pre">Base</span></a></span></span><a class="headerlink" href="#define.array.Array.child" title="Link to this definition"></a></dt>
+<dd><p>Child</p>
+<p>Returns the child node associated with the array</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.array.Array.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#define.array.Array.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Goes through each of the values in the list, cleans it, stores it, and          returns a new list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (list | None): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>list | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.array.Array.minmax">
+<span class="sig-name descname"><span class="pre">minmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#define.array.Array.minmax" title="Link to this definition"></a></dt>
+<dd><p>Min/Max</p>
+<p>Sets or gets the minimum and maximum number of items for the Array</p>
+<dl class="simple">
+<dt>Arguments</dt><dd><p>minimum (int): The minimum value
+maximum (int): The maximum value</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.array.Array.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#define.array.Array.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dictionary</p>
+<p>Returns the Array as a dictionary in the same format as is used in              constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.array.Array.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#define.array.Array.type" title="Link to this definition"></a></dt>
+<dd><p>Type</p>
+<p>Getter/Setter for the type of array</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.array.Array.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.array.Array.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in self.validation_failures as a list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (list): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define.base">
+<span id="define-base-module"></span><h2>define.base module<a class="headerlink" href="#module-define.base" title="Link to this heading"></a></h2>
+<p>Base</p>
+<p>Contains the class that all other Define classes extend from</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.base.Base">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.base.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The class all other Define types must extend</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>abc.ABC</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.class_name">
+<span class="sig-name descname"><span class="pre">class_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.class_name" title="Link to this definition"></a></dt>
+<dd><p>Class Name</p>
+<p>Returns the class of the Node instance</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.clean">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>As validation allows for strings representing non-string values, it is          useful to be able to “clean” a value and turn it into the value it was          representing, making sure that data in data stores is accurate, and             not representitive</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.create" title="Link to this definition"></a></dt>
+<dd><p>Create</p>
+<p>Figure out the child node type necessary and create an instance of it</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>details (dict): An object describing a data point</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.from_file" title="Link to this definition"></a></dt>
+<dd><p>From File</p>
+<p>Loads a JSON file and creates a Node instance from it</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>filename (str): The filename to load</p>
+</dd>
+<dt>Returns:</dt><dd><p>Base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.make_details">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.make_details" title="Link to this definition"></a></dt>
+<dd><p>Make Details</p>
+<p>Common function for merging the <cite>details</cite> with <cite>extend</cite></p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>details (dict | str): Definition, or path to the file containing it
+extend (dict): A dictionary to extend the definition of <cite>details</cite></p>
+</dd>
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.optional">
+<span class="sig-name descname"><span class="pre">optional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.optional" title="Link to this definition"></a></dt>
+<dd><p>Optional</p>
+<p>Getter/Setter method for optional flag</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (bool): If set, the method is a setter</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.register" title="Link to this definition"></a></dt>
+<dd><p>Register</p>
+<p>Registers the class as a child that can be created</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>name (str): the name of the class that will be added</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.special">
+<span class="sig-name descname"><span class="pre">special</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#define.base.Base.special" title="Link to this definition"></a></dt>
+<dd><p>Special</p>
+<p>Get special values associated with nodes</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): The name of the value to either get
+default (any): The default value. Returned if the special field                                 doesn’t exist</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError: If the name is not a valid string
+ValueError: If the name is invalid</p>
+</dd>
+<dt>Returns:</dt><dd><p>Returns the special value, or the default</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.special_set">
+<span class="sig-name descname"><span class="pre">special_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.base.Base.special_set" title="Link to this definition"></a></dt>
+<dd><p>Special</p>
+<p>Traditionally we don’t atlter data after instantiation, but just in
+case it is needed, it is possible to overwrite special values</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>name (str): The name of the value to either set
+value (any): The value to set. Must be something that can be                            converted directly to JSON</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError: If the name is not a valid string
+ValueError: If the name is invalid, or if setting and the value                                 can not be converted to JSON</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the basic node as a dictionary in the same format as is used            in constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.base.Base.to_json" title="Link to this definition"></a></dt>
+<dd><p>To JSON</p>
+<p>Returns a JSON string representation of the instance</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.base.Base.valid">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.base.Base.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (mixed): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="define.base.Base.validation_failures">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validation_failures</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#define.base.Base.validation_failures" title="Link to this definition"></a></dt>
+<dd><p>Validation Failures</p>
+<p>Returns the last failures as a property so they can’t be overwritten</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[field, error][]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define.constants">
+<span id="define-constants-module"></span><h2>define.constants module<a class="headerlink" href="#module-define.constants" title="Link to this heading"></a></h2>
+<p>Constants</p>
+<p>Holds various strings and regexes for valid types</p>
+</section>
+<section id="module-define.hash">
+<span id="define-hash-module"></span><h2>define.hash module<a class="headerlink" href="#module-define.hash" title="Link to this heading"></a></h2>
+<p>Hash</p>
+<p>Represents a node which is a dictionary of node type to node type</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.hash.Hash">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.hash.</span></span><span class="sig-name descname"><span class="pre">Hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.hash.Hash" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Handles objects similar to Parents except where the keys are dynamic    instead of static</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.hash.Hash.child">
+<span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#define.base.Base" title="define.base.Base"><span class="pre">Base</span></a></span></span><a class="headerlink" href="#define.hash.Hash.child" title="Link to this definition"></a></dt>
+<dd><p>Child</p>
+<p>Returns the child node associated with the hash</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.hash.Hash.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#define.hash.Hash.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Makes sure both the key and value are properly stored in their correct          representation</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to clean</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict | list | any | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.hash.Hash.key">
+<span class="sig-name descname"><span class="pre">key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#define.node.Node" title="define.node.Node"><span class="pre">Node</span></a></span></span><a class="headerlink" href="#define.hash.Hash.key" title="Link to this definition"></a></dt>
+<dd><p>Key</p>
+<p>Property to return the node associated with the key</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.hash.Hash.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#define.hash.Hash.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Hash as a dictionary in the same format as is used in               constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.hash.Hash.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.hash.Hash.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as            a list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (dict | None): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define.node">
+<span id="define-node-module"></span><h2>define.node module<a class="headerlink" href="#module-define.node" title="Link to this heading"></a></h2>
+<p>Node</p>
+<p>Represents a single node of data, an immutable type like an int or a string</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.node.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Represents a single node of data, an immutable type like an int or a string</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Cleans and returns the new value</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value {mixed} – The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.compare_ips">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compare_ips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#define.node.Node.compare_ips" title="Link to this definition"></a></dt>
+<dd><p>Compare IPs</p>
+<p>Compares two IPs and returns a status based on which is greater
+If first is less than second: -1
+If first is equal to second: 0
+If first is greater than second: 1</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>first (str): A string representing an IP address
+second (str): A string representing an IP address</p>
+</dd>
+<dt>Returns:</dt><dd><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.minmax">
+<span class="sig-name descname"><span class="pre">minmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node.minmax" title="Link to this definition"></a></dt>
+<dd><p>Min/Max</p>
+<p>Sets or gets the minimum and/or maximum values for the Node. For                getting, returns {“minimum”:mixed,”maximum”:mixed}</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>minimum (any): The minimum value
+maximum (any): The maximum value</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError, ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None | dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.options">
+<span class="sig-name descname"><span class="pre">options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node.options" title="Link to this definition"></a></dt>
+<dd><p>Options</p>
+<p>Setter/Getter for the list of acceptable values for the Node</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>options (list): A list of valid values</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError, ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None | list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.regex">
+<span class="sig-name descname"><span class="pre">regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Pattern</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node.regex" title="Link to this definition"></a></dt>
+<dd><p>Regex</p>
+<p>Sets or gets the regular expression used to validate the Node</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>regex (str): A standard regular expression string, or compiled                          regular expression</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None | str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Node as a dictionary in the same format as is used in               constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.node.Node.type" title="Link to this definition"></a></dt>
+<dd><p>Type</p>
+<p>Returns the type of Node</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.node.Node.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.node.Node.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define.options">
+<span id="define-options-module"></span><h2>define.options module<a class="headerlink" href="#module-define.options" title="Link to this heading"></a></h2>
+<p>Options</p>
+<p>Represents a node which can have several different types of values/Nodes and still be valid</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.options.Options">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.options.</span></span><span class="sig-name descname"><span class="pre">Options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.options.Options" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Options Node</p>
+<p>Represents a node which can have several different types of values/Nodes        and still be valid</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>_NodeInterface</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.options.Options.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.options.Options.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Uses the valid method to check which type the value is, and then calls          the correct version of clean on that node</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.options.Options.option">
+<span class="sig-name descname"><span class="pre">option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.options.Options.option" title="Link to this definition"></a></dt>
+<dd><p>Option</p>
+<p>Returns the node of a specific index from the options</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>index (int): The index to get
+default (any): Value to return if the index does not exist</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.options.Options.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.options.Options.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Nodes as a list of dictionaries in the same format as is            used in constructing them</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.options.Options.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.options.Options.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define.parent">
+<span id="define-parent-module"></span><h2>define.parent module<a class="headerlink" href="#module-define.parent" title="Link to this heading"></a></h2>
+<p>Parent</p>
+<p>Represents defined keys mapped to other Nodes which themselves could be Parents</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.parent.Parent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.parent.</span></span><span class="sig-name descname"><span class="pre">Parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Represents defined keys mapped to other Nodes which themselves could be         Parents</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.child">
+<span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent.child" title="Link to this definition"></a></dt>
+<dd><p>Get</p>
+<p>Returns the node of a specific key from the parent</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>key (str): The key to get
+default (any): Optional, value to return if the key does not exist</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Goes through each of the values in the dict, cleans it, stores it, and          returns a new dict</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (dict): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.has_key">
+<span class="sig-name descname"><span class="pre">has_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent.has_key" title="Link to this definition"></a></dt>
+<dd><p>Has Key</p>
+<p>Returns whether a specific key exists in the parent</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>key (str): The key to check for</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent.keys" title="Link to this definition"></a></dt>
+<dd><p>Keys</p>
+<p>Returns a list of the node names in the parent</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="define.parent.Parent.nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#define.parent.Parent.nodes" title="Link to this definition"></a></dt>
+<dd><p>Nodes Property</p>
+<p>Creates a read only attribute to access the instances child nodes</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">require</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent.requires" title="Link to this definition"></a></dt>
+<dd><p>Requires</p>
+<p>Setter/Getter for the require rules used to validate the Parent</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>require (dict): A dictionary expressing requirements of fields</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.parent.Parent.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Parent as a dictionary in the same format as is used in             constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.parent.Parent.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.parent.Parent.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define.tree">
+<span id="define-tree-module"></span><h2>define.tree module<a class="headerlink" href="#module-define.tree" title="Link to this heading"></a></h2>
+<p>Tree</p>
+<p>Represents the master parent of a record, holds special data to represent how the entire tree is stored</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.tree.Tree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.tree.</span></span><span class="sig-name descname"><span class="pre">Tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.tree.Tree" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.parent.Parent" title="define.parent.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parent</span></code></a></p>
+<p>Represents the master parent of a record, holds special data to represent       how the entire tree is stored</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Parent</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.tree.Tree.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.tree.Tree.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Tree as a dictionary in the same format as is used in               constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.tree.Tree.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.tree.Tree.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-define">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-define" title="Link to this heading"></a></h2>
+<p>Define</p>
+<p>Define data structures</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Array">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Array" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Handles lists of nodes</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Array.child">
+<span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#define.base.Base" title="define.base.Base"><span class="pre">Base</span></a></span></span><a class="headerlink" href="#define.Array.child" title="Link to this definition"></a></dt>
+<dd><p>Child</p>
+<p>Returns the child node associated with the array</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Array.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#define.Array.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Goes through each of the values in the list, cleans it, stores it, and          returns a new list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (list | None): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>list | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Array.minmax">
+<span class="sig-name descname"><span class="pre">minmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#define.Array.minmax" title="Link to this definition"></a></dt>
+<dd><p>Min/Max</p>
+<p>Sets or gets the minimum and maximum number of items for the Array</p>
+<dl class="simple">
+<dt>Arguments</dt><dd><p>minimum (int): The minimum value
+maximum (int): The maximum value</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Array.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#define.Array.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dictionary</p>
+<p>Returns the Array as a dictionary in the same format as is used in              constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Array.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#define.Array.type" title="Link to this definition"></a></dt>
+<dd><p>Type</p>
+<p>Getter/Setter for the type of array</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Array.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Array.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in self.validation_failures as a list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (list): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Base">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>The class all other Define types must extend</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>abc.ABC</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.class_name">
+<span class="sig-name descname"><span class="pre">class_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.class_name" title="Link to this definition"></a></dt>
+<dd><p>Class Name</p>
+<p>Returns the class of the Node instance</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.clean">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>As validation allows for strings representing non-string values, it is          useful to be able to “clean” a value and turn it into the value it was          representing, making sure that data in data stores is accurate, and             not representitive</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.create" title="Link to this definition"></a></dt>
+<dd><p>Create</p>
+<p>Figure out the child node type necessary and create an instance of it</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>details (dict): An object describing a data point</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.from_file" title="Link to this definition"></a></dt>
+<dd><p>From File</p>
+<p>Loads a JSON file and creates a Node instance from it</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>filename (str): The filename to load</p>
+</dd>
+<dt>Returns:</dt><dd><p>Base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.make_details">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.make_details" title="Link to this definition"></a></dt>
+<dd><p>Make Details</p>
+<p>Common function for merging the <cite>details</cite> with <cite>extend</cite></p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>details (dict | str): Definition, or path to the file containing it
+extend (dict): A dictionary to extend the definition of <cite>details</cite></p>
+</dd>
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.optional">
+<span class="sig-name descname"><span class="pre">optional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.optional" title="Link to this definition"></a></dt>
+<dd><p>Optional</p>
+<p>Getter/Setter method for optional flag</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (bool): If set, the method is a setter</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.register" title="Link to this definition"></a></dt>
+<dd><p>Register</p>
+<p>Registers the class as a child that can be created</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>name (str): the name of the class that will be added</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.special">
+<span class="sig-name descname"><span class="pre">special</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#define.Base.special" title="Link to this definition"></a></dt>
+<dd><p>Special</p>
+<p>Get special values associated with nodes</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): The name of the value to either get
+default (any): The default value. Returned if the special field                                 doesn’t exist</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError: If the name is not a valid string
+ValueError: If the name is invalid</p>
+</dd>
+<dt>Returns:</dt><dd><p>Returns the special value, or the default</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.special_set">
+<span class="sig-name descname"><span class="pre">special_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Base.special_set" title="Link to this definition"></a></dt>
+<dd><p>Special</p>
+<p>Traditionally we don’t atlter data after instantiation, but just in
+case it is needed, it is possible to overwrite special values</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>name (str): The name of the value to either set
+value (any): The value to set. Must be something that can be                            converted directly to JSON</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError: If the name is not a valid string
+ValueError: If the name is invalid, or if setting and the value                                 can not be converted to JSON</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the basic node as a dictionary in the same format as is used            in constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Base.to_json" title="Link to this definition"></a></dt>
+<dd><p>To JSON</p>
+<p>Returns a JSON string representation of the instance</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Base.valid">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Base.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (mixed): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="define.Base.validation_failures">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validation_failures</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#define.Base.validation_failures" title="Link to this definition"></a></dt>
+<dd><p>Validation Failures</p>
+<p>Returns the last failures as a property so they can’t be overwritten</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>[field, error][]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Hash">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Hash" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Handles objects similar to Parents except where the keys are dynamic    instead of static</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Hash.child">
+<span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#define.base.Base" title="define.base.Base"><span class="pre">Base</span></a></span></span><a class="headerlink" href="#define.Hash.child" title="Link to this definition"></a></dt>
+<dd><p>Child</p>
+<p>Returns the child node associated with the hash</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Hash.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#define.Hash.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Makes sure both the key and value are properly stored in their correct          representation</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to clean</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict | list | any | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Hash.key">
+<span class="sig-name descname"><span class="pre">key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#define.node.Node" title="define.node.Node"><span class="pre">Node</span></a></span></span><a class="headerlink" href="#define.Hash.key" title="Link to this definition"></a></dt>
+<dd><p>Key</p>
+<p>Property to return the node associated with the key</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Hash.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#define.Hash.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Hash as a dictionary in the same format as is used in               constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Hash.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Hash.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as            a list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (dict | None): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Node" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Represents a single node of data, an immutable type like an int or a string</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Node.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Cleans and returns the new value</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value {mixed} – The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.compare_ips">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compare_ips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#define.Node.compare_ips" title="Link to this definition"></a></dt>
+<dd><p>Compare IPs</p>
+<p>Compares two IPs and returns a status based on which is greater
+If first is less than second: -1
+If first is equal to second: 0
+If first is greater than second: 1</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>first (str): A string representing an IP address
+second (str): A string representing an IP address</p>
+</dd>
+<dt>Returns:</dt><dd><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.minmax">
+<span class="sig-name descname"><span class="pre">minmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Node.minmax" title="Link to this definition"></a></dt>
+<dd><p>Min/Max</p>
+<p>Sets or gets the minimum and/or maximum values for the Node. For                getting, returns {“minimum”:mixed,”maximum”:mixed}</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>minimum (any): The minimum value
+maximum (any): The maximum value</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError, ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None | dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.options">
+<span class="sig-name descname"><span class="pre">options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Node.options" title="Link to this definition"></a></dt>
+<dd><p>Options</p>
+<p>Setter/Getter for the list of acceptable values for the Node</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>options (list): A list of valid values</p>
+</dd>
+<dt>Raises:</dt><dd><p>TypeError, ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None | list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.regex">
+<span class="sig-name descname"><span class="pre">regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Pattern</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Node.regex" title="Link to this definition"></a></dt>
+<dd><p>Regex</p>
+<p>Sets or gets the regular expression used to validate the Node</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>regex (str): A standard regular expression string, or compiled                          regular expression</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None | str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Node.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Node as a dictionary in the same format as is used in               constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Node.type" title="Link to this definition"></a></dt>
+<dd><p>Type</p>
+<p>Returns the type of Node</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Node.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Node.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Options">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Options" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Options Node</p>
+<p>Represents a node which can have several different types of values/Nodes        and still be valid</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>_NodeInterface</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Options.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Options.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Uses the valid method to check which type the value is, and then calls          the correct version of clean on that node</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Options.option">
+<span class="sig-name descname"><span class="pre">option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Options.option" title="Link to this definition"></a></dt>
+<dd><p>Option</p>
+<p>Returns the node of a specific index from the options</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>index (int): The index to get
+default (any): Value to return if the index does not exist</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Options.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Options.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Nodes as a list of dictionaries in the same format as is            used in constructing them</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Options.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Options.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Parent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.base.Base" title="define.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Represents defined keys mapped to other Nodes which themselves could be         Parents</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Base</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.child">
+<span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent.child" title="Link to this definition"></a></dt>
+<dd><p>Get</p>
+<p>Returns the node of a specific key from the parent</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>key (str): The key to get
+default (any): Optional, value to return if the key does not exist</p>
+</dd>
+<dt>Returns:</dt><dd><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent.clean" title="Link to this definition"></a></dt>
+<dd><p>Clean</p>
+<p>Goes through each of the values in the dict, cleans it, stores it, and          returns a new dict</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (dict): The value to clean</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.has_key">
+<span class="sig-name descname"><span class="pre">has_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent.has_key" title="Link to this definition"></a></dt>
+<dd><p>Has Key</p>
+<p>Returns whether a specific key exists in the parent</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>key (str): The key to check for</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent.keys" title="Link to this definition"></a></dt>
+<dd><p>Keys</p>
+<p>Returns a list of the node names in the parent</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="define.Parent.nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#define.Parent.nodes" title="Link to this definition"></a></dt>
+<dd><p>Nodes Property</p>
+<p>Creates a read only attribute to access the instances child nodes</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">require</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent.requires" title="Link to this definition"></a></dt>
+<dd><p>Requires</p>
+<p>Setter/Getter for the require rules used to validate the Parent</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>require (dict): A dictionary expressing requirements of fields</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Parent.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Parent as a dictionary in the same format as is used in             constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Parent.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#define.Parent.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="define.Tree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">define.</span></span><span class="sig-name descname"><span class="pre">Tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Tree" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#define.parent.Parent" title="define.parent.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parent</span></code></a></p>
+<p>Represents the master parent of a record, holds special data to represent       how the entire tree is stored</p>
+<dl class="simple">
+<dt>Extends:</dt><dd><p>Parent</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Tree.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#define.Tree.to_dict" title="Link to this definition"></a></dt>
+<dd><p>To Dict</p>
+<p>Returns the Tree as a dictionary in the same format as is used in               constructing it</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="define.Tree.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#define.Tree.valid" title="Link to this definition"></a></dt>
+<dd><p>Valid</p>
+<p>Checks if a value is valid based on the instance’s values. If any               errors occur, they can be found in [instance].validation_failures as a          list</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>value (any): The value to validate
+ignore_missing (bool): Optional, set to True to ignore missing nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ouroboros Coding Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
